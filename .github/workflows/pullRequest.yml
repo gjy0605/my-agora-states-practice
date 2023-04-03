@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout source code.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install dependencies
         run: npm install
         working-directory: ./my-agora-states-client
@@ -34,23 +34,3 @@ jobs:
             build s3://fe-8-gjy0605-s3 \
             --delete
         working-directory: ./my-agora-states-client
-
-
-
-
-
-# name: Bare Minimum Requirements
-
-# on: [push, pull_request]
-
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Bare Minimum Requirements
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: '16'
-#       - run: npm install
-#       - run: npm test
